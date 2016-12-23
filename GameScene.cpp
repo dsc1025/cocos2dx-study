@@ -34,11 +34,9 @@ bool GameScene::init() {
 
 	knight->runAction(RepeatForever::create(knightAnimation));
 	this->addChild(knight);
-	
+
 	listenerKeyboard->onKeyPressed = CC_CALLBACK_2(GameScene::onKeyPressed, this);
 	this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerKeyboard, this);
-
-
 
 	return true;
 }
@@ -47,7 +45,10 @@ void GameScene::onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event)
 {
 	switch (keyCode) {
 	case EventKeyboard::KeyCode::KEY_SPACE:
-		CCLOG("aaaaa");
+
+		Action *jump = JumpBy::create(.5, Vec2(0, 0), 20, 1);
+		knight->runAction(jump);
+
 		break;
 	}
 }

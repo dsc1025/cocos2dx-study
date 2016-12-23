@@ -17,6 +17,8 @@ public:
 	cocos2d::Action *jump = new cocos2d::Action();
 
 private:
+	cocos2d::TMXTiledMap *TMap = cocos2d::TMXTiledMap::create("");
+
 	cocos2d::EventListenerKeyboard *listenerKeyboard = cocos2d::EventListenerKeyboard::create();
 	virtual void onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
 };

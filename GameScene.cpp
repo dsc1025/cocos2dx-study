@@ -25,6 +25,12 @@ bool GameScene::init() {
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
+	//map initialize
+	/*TMap = TMXTiledMap::create("map/map2.tmx");
+	this->addChild(TMap, 0);*/
+	map = new TiledMap::Map("map/map2.tmx");
+	this->addChild(map->TMap, 0);
+	
 	//knight initialize
 	this->knightCache->addSpriteFramesToCache();
 
@@ -33,7 +39,7 @@ bool GameScene::init() {
 	knightAnimation = this->knightCache->createCha_kni_fAnimateAction(0.14f);
 
 	knight->runAction(RepeatForever::create(knightAnimation));
-	this->addChild(knight);
+	this->addChild(knight, 1);
 
 	listenerKeyboard->onKeyPressed = CC_CALLBACK_2(GameScene::onKeyPressed, this);
 	this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerKeyboard, this);
@@ -52,3 +58,4 @@ void GameScene::onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event)
 		break;
 	}
 }
+

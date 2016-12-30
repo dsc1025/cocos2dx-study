@@ -3,12 +3,14 @@
 
 #include "cocos2d.h"
 #include "knight.hpp"
+#include "gameMap.h"
 
 class GameScene : public cocos2d::Layer
 {
 public:
 	static cocos2d::Scene* createScene();
 	virtual bool init();
+
 	CREATE_FUNC(GameScene);
 
 	TexturePacker::Knight *knightCache = new TexturePacker::Knight();
@@ -16,11 +18,14 @@ public:
 	cocos2d::Animate *knightAnimation = new cocos2d::Animate();
 	cocos2d::Action *jump = new cocos2d::Action();
 
-private:
-	cocos2d::TMXTiledMap *TMap = cocos2d::TMXTiledMap::create("");
+	TiledMap::Map *map = nullptr;
+	//cocos2d::TMXTiledMap *TMap = nullptr;
 
+private:
 	cocos2d::EventListenerKeyboard *listenerKeyboard = cocos2d::EventListenerKeyboard::create();
 	virtual void onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
+
+	
 };
 
 #endif // ___GAME_SCENE_H__

@@ -28,7 +28,7 @@ bool GameScene::init() {
 	//map initialize
 	/*TMap = TMXTiledMap::create("map/map2.tmx");
 	this->addChild(TMap, 0);*/
-	map = new TiledMap::Map("map/map2.tmx");
+	map = new TiledMap::Map("map/map5.tmx");
 	this->addChild(map->TMap, 0);
 	
 	//knight initialize

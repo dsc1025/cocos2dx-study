@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 #include "knight.hpp"
-#include "gameMap.h"
+#include "GameMap.h"
 
 class GameScene : public cocos2d::Layer
 {
@@ -19,7 +19,6 @@ public:
 	cocos2d::Action *jump = new cocos2d::Action();
 
 	TiledMap::Map *map = nullptr;
-	//cocos2d::TMXTiledMap *TMap = nullptr;
 
 private:
 	cocos2d::EventListenerKeyboard *listenerKeyboard = cocos2d::EventListenerKeyboard::create();

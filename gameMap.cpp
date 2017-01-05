@@ -1,4 +1,4 @@
-#include "gameMap.h"
+#include "GameMap.h"
 
 USING_NS_CC;
 
@@ -13,7 +13,7 @@ namespace TiledMap {
 	{
 	}
 	void Map::initMap() {
-		TMap = TMXTiledMap::create(filePath);
+		TMap = experimental::TMXTiledMap::create(filePath);
 		TMap->setPosition(Vec2(0, 0));
 		//Vector<Node *> arratSprite = TMap->getChildren();
 

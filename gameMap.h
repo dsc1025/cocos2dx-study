@@ -10,10 +10,10 @@ namespace TiledMap
 	public:
 		Map(std::string url);
 		~Map();
-		cocos2d::TMXTiledMap *TMap = nullptr;
+		cocos2d::experimental::TMXTiledMap *TMap = nullptr;
+		cocos2d::experimental::TMXLayer* Layer = nullptr;
 		cocos2d::Size layerSize;
 		cocos2d::Size mapTileSize;
-		cocos2d::TMXLayer* Layer = nullptr;
 		cocos2d::Sprite *sprite = nullptr;
 
 		cocos2d::Vec2 getPositionForStaggeredAt(const cocos2d::Vec2& position);
